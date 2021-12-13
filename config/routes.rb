@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   scope module: :api do
     scope module: :v1 do
       namespace :weather do
-        resources :locations, only: :index
+        resources :locations, only: [] do
+          collection do
+            get :countries
+            get :regions
+            get :areas
+          end
+        end
       end
     end
   end
