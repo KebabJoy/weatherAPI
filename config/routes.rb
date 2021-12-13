@@ -4,8 +4,12 @@ Rails.application.routes.draw do
   scope module: :api do
     scope module: :v1 do
       namespace :weather do
+        get '/current' => 'temperatures#current'
+
         resources :locations, only: :index
       end
     end
   end
+
+  get '/health' => 'backends#health'
 end

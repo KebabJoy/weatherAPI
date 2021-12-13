@@ -16,8 +16,10 @@ gem 'jbuilder'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faraday'
 gem 'faraday_middleware'
+
 group :development, :test do
   gem 'byebug'
+  gem 'pry-rails'
 end
 
 group :test do
